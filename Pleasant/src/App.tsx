@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react';
 import sdk from '@crossmarkio/sdk';
-import './App.css';
 import Cookies from 'js-cookie';
+import styles from './App.module.css';
 
 function App() {
   const [walletAddress, setWalletAddress] = useState('');
-  const [password, setPassword] = useState(''); // Senha que será armazenada no estado
+  const [password, setPassword] = useState('');
   const [destinationAddress, setDestinationAddress] = useState('');
   const [amount, setAmount] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isRegistering, setIsRegistering] = useState(false); // Controle do estado de cadastro
+  const [isRegistering, setIsRegistering] = useState(false);
 
-  // Verificar se o usuário já está logado ao carregar a página
   useEffect(() => {
     const storedWalletAddress = Cookies.get('walletAddress');
     const storedPassword = Cookies.get('password');
@@ -20,7 +19,6 @@ function App() {
     }
   }, []);
 
-  // Função para conectar a carteira
   async function connectWallet() {
     const { response } = await sdk.methods.signInAndWait();
 
@@ -29,22 +27,17 @@ function App() {
     }
   }
 
-  // Função para o cadastro de senha
   function handleSignup() {
     if (!walletAddress || !password) {
       alert('Por favor, crie uma senha e conecte sua carteira!');
       return;
     }
 
-    // Salvar o endereço da carteira e a senha no cookie
     Cookies.set('walletAddress', walletAddress);
     Cookies.set('password', password);
-
-    // Alterar o estado para exibir a tela de login após o cadastro
     setIsRegistering(false);
   }
 
-  // Função de login
   function handleLogin() {
     const storedPassword = Cookies.get('password');
     if (!password) {
@@ -53,14 +46,12 @@ function App() {
     }
 
     if (storedPassword === password) {
-      // Se a senha estiver correta, loga o usuário
       setIsLoggedIn(true);
     } else {
       alert('Senha incorreta!');
     }
   }
 
-  // Função para realizar a transação
   async function transfer() {
     if (!destinationAddress || !amount) {
       alert('Por favor, preencha os campos de destino e quantidade!');
@@ -72,7 +63,7 @@ function App() {
         TransactionType: 'Payment',
         Account: walletAddress,
         Destination: destinationAddress,
-        Amount: amount, // Quantidade em drops
+        Amount: amount,
       });
 
       if (response.data.resp) {
@@ -86,21 +77,20 @@ function App() {
     }
   }
 
-  // Exibir a interface conforme o estado de login
   if (isLoggedIn) {
     return (
-      <div className="container">
-        <h1>Bem-vindo!</h1>
-        <p>Você está logado com o endereço da carteira: {walletAddress}</p>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Bem-vindo!</h1>
+        <p className={styles.text}>Você está logado com o endereço da carteira: {walletAddress}</p>
 
         <div>
-          <h2>Realizar Transação</h2>
+          <h2 className={styles.subtitle}>Realizar Transação</h2>
           <input
             type="text"
             placeholder="Endereço de destino"
             value={destinationAddress}
             onChange={(e) => setDestinationAddress(e.target.value)}
-            className="input"
+            className={styles.input}
           />
 
           <input
@@ -108,10 +98,10 @@ function App() {
             placeholder="Quantidade (em drops)"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="input"
+            className={styles.input}
           />
 
-          <button onClick={transfer} className="btn">
+          <button onClick={transfer} className={styles.btn}>
             Enviar
           </button>
         </div>
@@ -119,59 +109,55 @@ function App() {
     );
   }
 
-  // Caso o usuário não esteja logado, exibe a tela de cadastro ou login
   return (
-    <div className="container">
-      <h1>{isRegistering ? 'Cadastro' : 'Login'}</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>{isRegistering ? 'Cadastro' : 'Login'}</h1>
 
       {!walletAddress && (
-        <button onClick={connectWallet} className="btn">
+        <button onClick={connectWallet} className={styles.btn}>
           Conectar Carteira
         </button>
       )}
 
       {walletAddress && (
         <div>
-          <p>Carteira conectada: {walletAddress}</p>
+          <p className={styles.text}>Carteira conectada: {walletAddress}</p>
 
-          {/* Tela de cadastro */}
           {isRegistering && !Cookies.get('password') && (
             <div>
-              <h3>Crie uma senha</h3>
+              <h3 className={styles.subtitle}>Crie uma senha</h3>
               <input
                 type="password"
                 placeholder="Crie uma senha"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="input"
+                className={styles.input}
               />
-              <button onClick={handleSignup} className="btn">
+              <button onClick={handleSignup} className={styles.btn}>
                 Cadastrar
               </button>
             </div>
           )}
 
-          {/* Tela de login */}
           {!isRegistering && Cookies.get('password') && (
             <div>
-              <h3>Insira sua senha para login</h3>
+              <h3 className={styles.subtitle}>Insira sua senha para login</h3>
               <input
                 type="password"
                 placeholder="Senha"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="input"
+                className={styles.input}
               />
-              <button onClick={handleLogin} className="btn">
+              <button onClick={handleLogin} className={styles.btn}>
                 Login
               </button>
             </div>
           )}
 
-          {/* Botão para alternar entre cadastro e login */}
           {!isRegistering && !Cookies.get('password') && (
             <div>
-              <button onClick={() => setIsRegistering(true)} className="btn">
+              <button onClick={() => setIsRegistering(true)} className={styles.btn}>
                 Criar Conta
               </button>
             </div>
