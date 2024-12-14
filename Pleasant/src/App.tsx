@@ -1,13 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Registro from './pages/Registro';
+import Header from './pages/Header';
 import Transacao from './pages/Transacao';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Registro />} />
+        <Route path="/" element={<Header />} />
         <Route path="/transacao" element={<Transacao />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
   );

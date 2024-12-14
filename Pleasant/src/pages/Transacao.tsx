@@ -14,7 +14,7 @@ function Transacao() {
     <div className={styles.container}>
       <h1 className={styles.title}>Bem-vindo!</h1>
       <p className={styles.text}>Você está logado com o endereço da carteira: {walletAddress}</p>
-      <Transaction walletAddress={walletAddress} />
+        <Transaction walletAddress={walletAddress} /> {/* Transacao*/}
     </div>
   );
 }
