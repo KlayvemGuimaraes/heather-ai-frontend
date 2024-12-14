@@ -1,43 +1,47 @@
 import { useState, useEffect } from 'react';
-import sdk from '@crossmarkio/sdk';
-import Cookies from 'js-cookie';
+import sdk from '@crossmarkio/sdk'; // Importando o SDK da Crossmark para conectar a carteira
+import Cookies from 'js-cookie'; // Importando o js-cookie para armazenar os dados localmente
 import styles from './App.module.css';
 
 function App() {
   const [walletAddress, setWalletAddress] = useState('');
   const [password, setPassword] = useState('');
-  const [destinationAddress, setDestinationAddress] = useState('');
-  const [amount, setAmount] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isRegistering, setIsRegistering] = useState(false);
+  const [destinationAddress, setDestinationAddress] = useState(''); // Estado para armazenar o endereço de destino da transação
+  const [amount, setAmount] = useState(''); // Estado para armazenar a quantidade de tokens a ser transferido
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado que indica se o usuário está logado
+  const [isRegistering, setIsRegistering] = useState(false); // Estado para controlar o modo de cadastro ou login
 
   useEffect(() => {
+   // Verificando se o endereço da carteira e a senha estão armazenados nos cookies
     const storedWalletAddress = Cookies.get('walletAddress');
     const storedPassword = Cookies.get('password');
     if (storedWalletAddress && storedPassword) {
-      setWalletAddress(storedWalletAddress);
+      setWalletAddress(storedWalletAddress);  // Caso exista, armazena o endereço da carteira no estado
     }
-  }, []);
+  }, []); // O useEffect é chamado apenas uma vez quando o componente é montado
 
   async function connectWallet() {
+    // Conectando a carteira utilizando o SDK da Crossmark
     const { response } = await sdk.methods.signInAndWait();
 
     if (response.data.address !== undefined) {
-      setWalletAddress(response.data.address);
+      setWalletAddress(response.data.address); // Armazena o endereço da carteira retornado pela Crossmark
     }
   }
 
   function handleSignup() {
+    // Função de cadastro, onde o usuário cria sua senha
     if (!walletAddress || !password) {
       alert('Por favor, crie uma senha e conecte sua carteira!');
       return;
     }
 
+    // Armazenando o endereço da carteira e a senha nos cookies
     Cookies.set('walletAddress', walletAddress);
     Cookies.set('password', password);
     setIsRegistering(false);
   }
-
+  // função de login
   function handleLogin() {
     const storedPassword = Cookies.get('password');
     if (!password) {
@@ -46,19 +50,21 @@ function App() {
     }
 
     if (storedPassword === password) {
-      setIsLoggedIn(true);
+      setIsLoggedIn(true); // se estiver comparadamente correto ao cookie, loga
     } else {
-      alert('Senha incorreta!');
+      alert('Senha incorreta!'); // se não, senha incorreta
     }
   }
 
   async function transfer() {
+    // Função para realizar a transação
     if (!destinationAddress || !amount) {
       alert('Por favor, preencha os campos de destino e quantidade!');
       return;
     }
 
     try {
+      // Realizando a transação usando o SDK da Crossmark
       const { response } = await sdk.methods.signAndSubmitAndWait({
         TransactionType: 'Payment',
         Account: walletAddress,
@@ -77,6 +83,7 @@ function App() {
     }
   }
 
+  // Verificando se o usuário está logado para exibir a interface apropriada
   if (isLoggedIn) {
     return (
       <div className={styles.container}>
@@ -109,6 +116,7 @@ function App() {
     );
   }
 
+  // Caso o usuário não esteja logado, exibe a tela de login ou cadastro
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>{isRegistering ? 'Cadastro' : 'Login'}</h1>
