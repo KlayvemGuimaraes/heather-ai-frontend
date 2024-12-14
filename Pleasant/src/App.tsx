@@ -90,7 +90,7 @@ function App() {
         <h1 className={styles.title}>Bem-vindo!</h1>
         <p className={styles.text}>Você está logado com o endereço da carteira: {walletAddress}</p>
 
-        <div>
+        <div className={styles.containerBox}>
           <h2 className={styles.subtitle}>Realizar Transação</h2>
           <input
             type="text"
@@ -132,7 +132,7 @@ function App() {
           <p className={styles.text}>Carteira conectada: {walletAddress}</p>
 
           {isRegistering && !Cookies.get('password') && (
-            <div>
+            <div className={styles.containerBox}>
               <h3 className={styles.subtitle}>Crie uma senha</h3>
               <input
                 type="password"
@@ -148,7 +148,7 @@ function App() {
           )}
 
           {!isRegistering && Cookies.get('password') && (
-            <div>
+            <div className={styles.containerBox}>
               <h3 className={styles.subtitle}>Insira sua senha para login</h3>
               <input
                 type="password"
