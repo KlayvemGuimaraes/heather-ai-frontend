@@ -53,7 +53,7 @@ const Sidebar = () => {
           <li>
             <a href="#">
               <img src={Wallet} className={styles.icon} />
-              Sales
+              Discover
             </a>
           </li>
           <li>
