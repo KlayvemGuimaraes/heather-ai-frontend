@@ -1,12 +1,18 @@
 .container {
     display: flex;
-    width: 100%;
+    width:100%;
     
     position: fixed;
-    left: 0;
+    left: 0px;
     top: 0;
-
+    
     box-sizing: border-box;
+    padding-left: 250px;
+}
+
+.topBar{
+    display: flex;
+    width:100%;
     padding: 16px;
     
     background-color: #ffffff;
@@ -44,6 +50,9 @@
 
     border: none;
     font-size: .75rem;
+}
+.input:click{
+    border: none;
 }
 
 .user{
