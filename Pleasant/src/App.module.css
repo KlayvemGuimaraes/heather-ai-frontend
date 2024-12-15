@@ -95,3 +95,8 @@ body {
   --pure-black: #000000;
   --search-bar: #F6F6FB;
 }
+
+button:focus,
+input:focus {
+    outline: none;
+}
