@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    width: 100%;
+    
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    box-sizing: border-box;
+    padding: 16px;
+    
+    background-color: #ffffff;
+    border-bottom: 1px solid #C8CBD9;
+}
+
+.searchBar{
+    width: 60%;
+}
+
+.userInfo{
+    width: 40%;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+.input_container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F6F6FB;
+    border-radius: 4px;
+    padding-right: 10px;
+}
+
+.input{
+    width: 90%;
+    height: 32px;
+    color: #1F384C;
+
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    background-color: transparent;
+
+    border: none;
+    font-size: .75rem;
+}
+
+.user{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 6px;
+    color: #1F384C;
+    font-size: 12px;
+}
+
+.user img{
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.deposit{
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    background-color: #FAFAFA;
+    border: 1px solid #BB35A9;
+    border-radius: 10px;
+    padding: 5px 10px;
+
+    color: #BB35A9;
+    font-size: 12px;
+    padding: 0;
+}
+.deposit:hover{
+    border:none;
+}
+
+.iconClick{
+    background-color: transparent;
+    border:none;
+    padding: 0;
+}
+
+.notifications{
+    height: 25px;
+}
