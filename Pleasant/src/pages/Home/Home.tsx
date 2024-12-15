@@ -5,7 +5,8 @@ import styles from './Home.module.css'
 // COMPONENTS
 import Sidebar from '../../components/SideBar/SideBar';
 import TopBar from '../../components/TopBar/TopBar';
-import RevenueDiagram from '../../components/RevenueDiagram/RevenueDiagram';
+import RevenueDiagram from '../../components/Diagrams/RevenueDiagram/RevenueDiagram';
+import TrasuresDiagram from '../../components/Diagrams/TreasuresDiagram/TrasuresDiagram';
 
 const Home = () => {
   
@@ -18,13 +19,16 @@ const Home = () => {
         <Sidebar/>
       </div>
       
+      {/* Conteúdo da Home vai aqui */}
       <div className={styles.homeScreen}>
         <div className={styles.container_home}>
           <TopBar/>
 
           <h1 className={styles.title}>{userName}</h1>
-          {/* Conteúdo da Home vai aqui */}
-          <RevenueDiagram></RevenueDiagram>
+          <div className={styles.diagrams}>
+            <RevenueDiagram></RevenueDiagram>
+            <TrasuresDiagram></TrasuresDiagram>
+          </div>
         </div>
       </div>
     </div>

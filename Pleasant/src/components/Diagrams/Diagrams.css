@@ -1,14 +1,15 @@
+.container{
+    background-color: var(--pure-white);
+    padding: 20px 40px;
+}
+
+.diagram{
+    margin-top: 20px;
+}
+
 .topDiagram{
     display: flex;
     justify-content: space-between;
-}
-
-.reportButton{
-    background-color: var(--off-white);
-    color: var(--purple);
-    padding: 8px 16px;
-    height: fit-content;
-    width: fit-content;
 }
 
 .infoLabels{
@@ -28,25 +29,13 @@
     margin: 0 0 10px 0;
 }
 
-.variation{
-    display: flex;
-    align-items: center;
-}
-
-.topDiagram label{
-    margin-left: 5px;
-}
-label{
-    color: var(--lightText);
+.reportButton{
+    background-color: var(--off-white);
+    color: var(--purple);
     font-size: 12px;
-}
-
-.varPercentage{
-    color: var(--green);
-}
-
-.diagram{
-    margin-top: 25px;
+    padding: 6px 14px;
+    height: fit-content;
+    width: fit-content;
 }
 
 .fig{

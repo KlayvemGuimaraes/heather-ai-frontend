@@ -1,0 +1,16 @@
+.variation{
+    display: flex;
+    align-items: center;
+}
+
+.topDiagram label{
+    margin-left: 5px;
+}
+label{
+    color: var(--lightText);
+    font-size: 12px;
+}
+
+.varPercentage{
+    color: var(--green);
+}

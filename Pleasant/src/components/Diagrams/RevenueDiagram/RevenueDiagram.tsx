@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import styles from './RevenueDiagram.module.css';
+import '../Diagrams.css'
 
 // IMAGENS
-import arrow_up  from '../../assets/iconsDiagrams/arrow_up.svg'
+import arrow_up  from '../../../assets/iconsDiagrams/arrow_up.svg'
 
 const RevenueDiagram = () => {
 
@@ -13,10 +14,10 @@ const RevenueDiagram = () => {
     const [varPercentage, setVarPercentage] = useState('2.1');
 
   return (
-    <div className={styles.container}>
+    <div className='container'>
 
-        <div className={styles.topDiagram}>
-            <div className={styles.infoLabels}>
+        <div className='topDiagram'>
+            <div className='infoLabels'>
                 <h3>Revenue</h3>
                 <h4>$ {revenue}</h4>
 
@@ -28,15 +29,15 @@ const RevenueDiagram = () => {
                 </div>
             </div>
 
-            <button className={styles.reportButton}>
+            <button className='reportButton'>
                 View Report
             </button>
         </div>
 
-        <div className={styles.diagram}>
+        <div className='diagram'>
             <label>Treasures from {timePeriod}</label>
             <img src="" alt="Diagram"/>
-            <div className={styles.fig}></div>
+            <div className='fig'></div>
         </div>
           
     </div>

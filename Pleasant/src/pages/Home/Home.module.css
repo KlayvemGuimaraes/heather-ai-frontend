@@ -11,12 +11,19 @@
 
 .container_home{
     background-color: var(--pure-white);
-    padding: 40px;
-} 
+    /* padding: 40px; */
+}
+
+.diagrams{
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Define 2 colunas de largura igual */
+    gap: 2px; /* Espaçamento entre os elementos (opcional) */
+}
 
 .title{
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
     color: var(--deep-blue);
-    margin-bottom: 40px;
+    padding: 40px 0 0 40px;
 }
