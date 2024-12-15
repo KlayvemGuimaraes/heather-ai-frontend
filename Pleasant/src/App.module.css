@@ -44,7 +44,7 @@ body {
 }
 
 .input {
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   padding: 0.8rem;

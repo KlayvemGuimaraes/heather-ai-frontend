@@ -1,34 +1,78 @@
 .container {
- width: 200px;
- background-color: #f1f1f1;
- height: 100%;
- position: fixed;
- left: 0;
- top: 0;
- padding: 20px;
- box-sizing: border-box;
- }
- 
- .header {
- border-bottom: 1px solid #ddd;
- padding-bottom: 10px;
- margin-bottom: 20px;
- }
- 
- .content ul {
- list-style-type: none;
- padding: 0;
- margin: 0;
- }
- 
- .content li a {
- display: block;
- color: #333;
- text-decoration: none;
- padding: 10px 0;
- transition: color 0.3s ease;
- }
- 
- .content li a:hover {
- color: #000;
- }
+    width: 250px;
+    background-color: #f1f1f1;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    
+    display: flex;
+    justify-content: center;
+  }
+  
+  .content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .content li {
+    transition: background-color 0.3s ease;
+  }
+  
+  .content li.active,
+  .content li:hover {
+    background-color: #ffc9f9;
+    border-radius: 10px;
+  }
+
+  .content li a {
+    display: flex;
+    align-items: center;
+    color: #273240;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .content li a:hover {
+    color: #840F74;
+  }
+
+  .content li svg:hover {
+    color: #840F74;
+  }
+
+  .icon {
+    margin-right: 10px;
+  }
+  
+  .others {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
+  h3 {
+    color: #082431;
+    font-weight: 500;
+  }
+  
+
+  .content li a:hover .svg-icon path {
+    fill: #840F74; /* Cor ao passar o mouse */
+    transition: fill 0.3s ease; /* Transição suave */
+  }
+  
+  .svg-icon path {
+    fill: #273240; /* Cor padrão */
+  }
+  
