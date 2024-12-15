@@ -11,6 +11,7 @@
     "start": "react-scripts start"
   },
   "dependencies": {
+    "@crossmarkio/sdk": "^0.4.0",
     "axios": "^1.7.9",
     "js-cookie": "^3.0.5",
     "pleasant": "file:",
