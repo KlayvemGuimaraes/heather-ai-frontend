@@ -84,7 +84,8 @@ body {
   --purple: #840F74;
   --darkish-purple: #780D69;
   --dark-purple: #590059;
-  
+
+  --pure-white: #ffffff;
   --off-white: #F1F1F1;
   --white: #DEDEDE;
   --lightText: #737B8B;
@@ -92,4 +93,5 @@ body {
   --sideBar: #202222;
   --background: #191A1A;
   --pure-black: #000000;
+  --search-bar: #F6F6FB;
 }
