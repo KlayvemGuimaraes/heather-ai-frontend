@@ -18,9 +18,9 @@ const Sidebar = () => {
       </div>
       <div className={styles.content}>
         <ul>
-          <h3>Menu</h3>
+          <h3 className={styles.containerTitle}>Menu</h3>
           <li>
-            <a href="#">
+            <a href="/home">
               <img src={Chart} className={styles.icon} />
               Dashboard
             </a>
@@ -43,7 +43,7 @@ const Sidebar = () => {
               Customer Service
             </a>
           </li>
-          <h3>Others</h3>
+          <h3 className={styles.containerTitle}>Others</h3>
           <li>
             <a href="#">
               <img src={Setting} className={styles.icon} />
@@ -51,7 +51,7 @@ const Sidebar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/discover">
               <img src={Wallet} className={styles.icon} />
               Discover
             </a>

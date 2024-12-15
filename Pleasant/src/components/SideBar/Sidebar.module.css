@@ -57,13 +57,7 @@
     margin-right: 10px;
   }
   
-  .others {
-    margin-top: 20px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-  }
-  
-  h3 {
+  .containerTitle {
     color: #082431;
     font-weight: 500;
     margin-left: 12px;
