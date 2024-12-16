@@ -37,8 +37,7 @@ const RevenueDiagram = () => {
 
         <div className='diagram'>
             <label>Treasures from {timePeriod}</label>
-            <img src={diagrama} alt="Diagram"/>
-            {/* <div className='fig'></div> */}
+            <img className={styles.diagramImg} src={diagrama} alt="Diagram"/>
         </div>
           
     </div>

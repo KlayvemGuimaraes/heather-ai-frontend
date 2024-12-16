@@ -29,8 +29,8 @@ const Home = () => {
             <div className={styles.diagrams}>
               <RevenueDiagram></RevenueDiagram>
               <TrasuresDiagram></TrasuresDiagram>
+              <RatingDiagram></RatingDiagram>
             </div>
-          <RatingDiagram></RatingDiagram>
         </div>
       </div>
     </div>

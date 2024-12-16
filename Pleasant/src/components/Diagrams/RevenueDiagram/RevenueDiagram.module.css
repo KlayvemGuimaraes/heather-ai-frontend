@@ -14,3 +14,7 @@ label{
 .varPercentage{
     color: var(--green);
 }
+
+.diagramImg{
+    height: 90px;
+}

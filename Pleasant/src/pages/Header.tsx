@@ -10,6 +10,7 @@ function Registro() {
   const [isRegistering, setIsRegistering] = useState(false);
 
   return (
+    <div className={styles.wrapper}>
     <div className={styles.container}>
       <img src="../../src/assets/VectorPleasantPurple.svg" alt="Logo Pleasant" />
       <h1 className={styles.title}>{isRegistering ? 'Cadastro' : 'Bem-vindo de volta!'}</h1>
@@ -27,6 +28,7 @@ function Registro() {
           )}
         </div>
       )}
+    </div>
     </div>
   );
 }

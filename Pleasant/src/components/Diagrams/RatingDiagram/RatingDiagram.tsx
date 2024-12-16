@@ -1,6 +1,7 @@
-// import styles from './TreasuresDiagram.module.css';
+import styles from './RatingDiagram.module.css';
 
 // IMAGENS
+import rating from '../../../assets/diagrams/rating.png'
 
 const RatingDiagram = () => {
 
@@ -19,8 +20,7 @@ const RatingDiagram = () => {
 
         <div className='diagram'>
             <label>Lorem ipsum dolor sit amet, consectetur</label>
-            <img src="" alt="Diagram"/>
-            <div className='fig'></div>
+            <img className={styles.diagramImg} src={rating} alt="Diagram"/>
         </div>
           
     </div>
