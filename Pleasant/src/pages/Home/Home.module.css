@@ -23,14 +23,13 @@
 
 /* HOME SCREEN */
 .homeScreen {
-  background-color: var(--pure-white);
   width: 100vw;
+  height: 100%;
   padding-top: 50px;
-  /* flex: 1; */
-  /* overflow-y: auto; */
 }
 
 .container_home {
+  background-color: var(--pure-white);
   padding: 40px;
 }
 
@@ -48,12 +47,28 @@
   color: var(--deep-blue);
 }
 
-.diagrams {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+.diagrams{
+  display: flex;
   gap: 2px;
-  margin-bottom: 20px;
   background-color: var(--off-white);
+}
+
+.leftDiagrams{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.bottomLeftDiagrams{
+  display: flex;
+  gap: 2px;
+}
+
+.rightDiagrams {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 /* RATING DIAGRAM */

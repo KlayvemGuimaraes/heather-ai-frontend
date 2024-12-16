@@ -36,11 +36,10 @@
   margin-bottom: 20px;
 }
   
-  {/*Klay, evita usar tags direto no css pra não afetar todas as páginas
+  /*Klay, evita usar tags direto no css pra não afetar todas as páginas
   tenta chamar o hr que você usou aqui por uma classe e configurar só a classe plz
-  */}
-  
-.line {
+  */
+hr {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;

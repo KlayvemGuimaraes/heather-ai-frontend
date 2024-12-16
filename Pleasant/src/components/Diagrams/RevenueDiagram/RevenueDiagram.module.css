@@ -1,3 +1,9 @@
+.container{
+    background-color: var(--pure-white);
+    padding: 20px 40px;
+    height: 40%;
+}
+
 .variation{
     display: flex;
     align-items: center;
@@ -16,5 +22,27 @@ label{
 }
 
 .diagramImg{
-    height: 90px;
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.labels, .purple, .gray{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.pColor, .gColor{
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+}
+
+.pColor{
+    background-color: var(--purple);
+}
+.gColor{
+    background-color: var(--off-white);
 }

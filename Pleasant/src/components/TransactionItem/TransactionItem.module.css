@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    background-color: var(--pure-white);
+}
+
+.userInfo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--sideBar);
+}
+
+.userInfo img{
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 100%;
+}

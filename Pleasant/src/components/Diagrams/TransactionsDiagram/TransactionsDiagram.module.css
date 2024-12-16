@@ -1,0 +1,12 @@
+.container{
+    width: 100%;
+    background-color: var(--pure-white);
+    padding: 20px 40px;
+}
+
+.transactionsList{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background-color: var(--off-white);
+}
