@@ -2,12 +2,13 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: url("assets/background.svg") no-repeat;
+  background: url("assets/background.svg") no-repeat; 
+  background-color: white;
   background-size: cover;
   height: 100vh;
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
 }
 

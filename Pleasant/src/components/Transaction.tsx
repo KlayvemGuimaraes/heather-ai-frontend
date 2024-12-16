@@ -2,7 +2,7 @@ import { useState } from 'react';
 import sdk from '@crossmarkio/sdk';
 import styles from '../App.module.css';
 
-function Transaction({ walletAddress }: { walletAddress: string }) {
+function transacao({ walletAddress }: { walletAddress: string }) {
   const [destinationAddress, setDestinationAddress] = useState('');
   const [amount, setAmount] = useState('');
 
@@ -55,4 +55,4 @@ function Transaction({ walletAddress }: { walletAddress: string }) {
   );
 }
 
-export default Transaction;
+export default transacao;
