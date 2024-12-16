@@ -7,6 +7,7 @@ import Sidebar from '../../components/SideBar/SideBar';
 import TopBar from '../../components/TopBar/TopBar';
 import RevenueDiagram from '../../components/Diagrams/RevenueDiagram/RevenueDiagram';
 import TrasuresDiagram from '../../components/Diagrams/TreasuresDiagram/TrasuresDiagram';
+import RatingDiagram from '../../components/Diagrams/RatingDiagram/RatingDiagram';
 
 const Home = () => {
   
@@ -29,6 +30,7 @@ const Home = () => {
             <RevenueDiagram></RevenueDiagram>
             <TrasuresDiagram></TrasuresDiagram>
           </div>
+          <RatingDiagram></RatingDiagram>
         </div>
       </div>
     </div>
