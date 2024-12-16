@@ -26,10 +26,10 @@ const Home = () => {
           <TopBar/>
 
           <h1 className={styles.title}>{userName}</h1>
-          <div className={styles.diagrams}>
-            <RevenueDiagram></RevenueDiagram>
-            <TrasuresDiagram></TrasuresDiagram>
-          </div>
+            <div className={styles.diagrams}>
+              <RevenueDiagram></RevenueDiagram>
+              <TrasuresDiagram></TrasuresDiagram>
+            </div>
           <RatingDiagram></RatingDiagram>
         </div>
       </div>

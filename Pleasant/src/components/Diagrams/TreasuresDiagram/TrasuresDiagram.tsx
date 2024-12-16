@@ -23,8 +23,7 @@ const TreasuresDiagram = () => {
 
         <div className='diagram'>
             <label>Treasures from {timePeriod}</label>
-            <img src="" alt="Diagram"/>
-            <div className='fig'></div>
+            <img src="../src/assets/diagrams/treasures.png" alt="Diagram"/>
         </div>
           
     </div>
