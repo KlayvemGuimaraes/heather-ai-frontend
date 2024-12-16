@@ -5,6 +5,7 @@ import '../Diagrams.css'
 
 // IMAGENS
 import arrow_up  from '../../../assets/iconsDiagrams/arrow_up.svg'
+import diagrama from '../../../assets/diagrams/revenue.png'
 
 const RevenueDiagram = () => {
 
@@ -36,8 +37,8 @@ const RevenueDiagram = () => {
 
         <div className='diagram'>
             <label>Treasures from {timePeriod}</label>
-            <img src="" alt="Diagram"/>
-            <div className='fig'></div>
+            <img src={diagrama} alt="Diagram"/>
+            {/* <div className='fig'></div> */}
         </div>
           
     </div>
