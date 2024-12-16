@@ -1,13 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import styles from './RevenueDiagram.module.css';
+import styles from './RevenueBDiagram.module.css';
 import '../Diagrams.css'
 
 // IMAGENS
 import arrow_up  from '../../../assets/iconsDiagrams/arrow_up.svg'
-import diagrama from '../../../assets/diagrams/revenue.png'
+import diagrama from '../../../assets/diagrams/revenueB.png'
 
-const RevenueDiagram = () => {
+const RevenueBDiagram = () => {
 
     const [revenue, setRevenue] = useState('7.852.000');
     const [variation, setVariation] = useState('Up');
@@ -34,11 +34,11 @@ const RevenueDiagram = () => {
                 View Report
             </button>
         </div>
+        <label>Treasures from {timePeriod}</label>
 
         <div className='diagram'>
-            <label>Treasures from {timePeriod}</label>
             <img className={styles.diagramImg} src={diagrama} alt="Diagram"/>
-            
+
             <div className={styles.labels}>
                 <div className={styles.purple}>
                     <div className={styles.pColor}></div>
@@ -55,4 +55,4 @@ const RevenueDiagram = () => {
   );
 };
 
-export default RevenueDiagram;
+export default RevenueBDiagram;

@@ -47,12 +47,28 @@
   color: var(--deep-blue);
 }
 
-.diagrams {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+.diagrams{
+  display: flex;
   gap: 2px;
-  margin-bottom: 20px;
   background-color: var(--off-white);
+}
+
+.leftDiagrams{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.bottomLeftDiagrams{
+  display: flex;
+  gap: 2px;
+}
+
+.rightDiagrams {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 /* RATING DIAGRAM */

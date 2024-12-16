@@ -14,7 +14,7 @@ const TransactionsDiagram = () => {
     const [timePeriod, setTimePeriod] = useState('1-30 Nov, 2024');
 
   return (
-    <div className='container'>
+    <div className={styles.container}>
 
         <div className='topDiagram'>
             <div className='infoLabels'>

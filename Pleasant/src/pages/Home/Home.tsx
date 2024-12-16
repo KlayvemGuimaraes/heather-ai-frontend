@@ -6,6 +6,7 @@ import styles from './Home.module.css'
 import Sidebar from '../../components/SideBar/SideBar';
 import TopBar from '../../components/TopBar/TopBar';
 import RevenueDiagram from '../../components/Diagrams/RevenueDiagram/RevenueDiagram';
+import RevenueBDiagram from '../../components/Diagrams/RevenueBDiagram/RevenueBDiagram';
 import TrasuresDiagram from '../../components/Diagrams/TreasuresDiagram/TreasuresDiagram';
 import RatingDiagram from '../../components/Diagrams/RatingDiagram/RatingDiagram';
 import TransactionsDiagram from '../../components/Diagrams/TransactionsDiagram/TransactionsDiagram';
@@ -27,12 +28,22 @@ const Home = () => {
           <TopBar/>
 
           <h1 className={styles.title}>{userName}</h1>
-            <div className={styles.diagrams}>
+
+          <div className={styles.diagrams}>
+            <div className={styles.leftDiagrams}>
               <RevenueDiagram></RevenueDiagram>
-              <TrasuresDiagram></TrasuresDiagram>
-              <RatingDiagram></RatingDiagram>
-              <TransactionsDiagram></TransactionsDiagram>
+              <div className={styles.bottomLeftDiagrams}>
+                <RatingDiagram></RatingDiagram>
+                <TransactionsDiagram></TransactionsDiagram>
+              </div>
             </div>
+            
+            <div className={styles.rightDiagrams}>
+              <TrasuresDiagram></TrasuresDiagram>
+              <RevenueBDiagram></RevenueBDiagram>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
