@@ -6,8 +6,13 @@ import TopBar from '../../components/TopBar/TopBar';
 class Discover extends Component {
   render() {
     return (
-      <>
-        <Sidebar />
+      /* Div geral que cobre todo o componente da página Discover*/
+      <div className={styles.wrapper}>
+        {/* Div que corrige o espaço da sidebar */}
+        <div className={styles.sidebar}>
+          <Sidebar />
+        </div>
+
         <TopBar />
         <div className={styles.container}>
           <header className={styles.header}>
@@ -74,7 +79,7 @@ class Discover extends Component {
             </aside>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
