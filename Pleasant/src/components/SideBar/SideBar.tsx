@@ -19,62 +19,74 @@ const Sidebar = () => {
       </div>
       <div className={styles.content}>
         <ul>
+
           <h3 className={styles.containerTitle}>Menu</h3>
+          
           <li>
             <a href="/home">
               <img src={Chart} className={styles.icon} />
               Dashboard
             </a>
           </li>
+
           <li>
             <a href="/Chat">
               <img src={Chat} className={styles.icon} />
               Chat
             </a>
           </li>
-          <li>
-            <a href="#">
-              <img src={Buy} className={styles.icon} />
-              My Account
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src={Document} className={styles.icon} />
-              Transactions
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src={Chat} className={styles.icon} />
-              Customer Service
-            </a>
-          </li>
-          <h3 className={styles.containerTitle}>Others</h3>
-          <li>
-            <a href="#">
-              <img src={Setting} className={styles.icon} />
-              Settings
-            </a>
-          </li>
+
           <li>
             <a href="/discover">
               <img src={Wallet} className={styles.icon} />
               Discover
             </a>
           </li>
+
+          <li>
+            <a href="#">
+              <img src={Document} className={styles.icon} />
+              Transactions
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <img src={Chat} className={styles.icon} />
+              Customer Service
+            </a>
+          </li>
+
+          <h3 className={styles.containerTitle}>Others</h3>
+
+          <li>
+            <a href="#">
+              <img src={Setting} className={styles.icon} />
+              Settings
+            </a>
+          </li>
+          
           <li>
             <a href="#">
               <img src={Profile} className={styles.icon} />
               Treasures
             </a>
           </li>
+
+          <li>
+            <a href="#">
+              <img src={Buy} className={styles.icon} />
+              My Account
+            </a>
+          </li> 
+
           <li>
             <a href="#">
               <img src={infoSquare} className={styles.icon} />
               Help
             </a>
           </li>
+
         </ul>
       </div>
     </div>
