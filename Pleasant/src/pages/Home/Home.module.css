@@ -23,14 +23,13 @@
 
 /* HOME SCREEN */
 .homeScreen {
-  background-color: var(--pure-white);
   width: 100vw;
+  height: 100%;
   padding-top: 50px;
-  /* flex: 1; */
-  /* overflow-y: auto; */
 }
 
 .container_home {
+  background-color: var(--pure-white);
   padding: 40px;
 }
 

@@ -6,8 +6,9 @@ import styles from './Home.module.css'
 import Sidebar from '../../components/SideBar/SideBar';
 import TopBar from '../../components/TopBar/TopBar';
 import RevenueDiagram from '../../components/Diagrams/RevenueDiagram/RevenueDiagram';
-import TrasuresDiagram from '../../components/Diagrams/TreasuresDiagram/TrasuresDiagram';
+import TrasuresDiagram from '../../components/Diagrams/TreasuresDiagram/TreasuresDiagram';
 import RatingDiagram from '../../components/Diagrams/RatingDiagram/RatingDiagram';
+import TransactionsDiagram from '../../components/Diagrams/TransactionsDiagram/TransactionsDiagram';
 
 const Home = () => {
   
@@ -30,6 +31,7 @@ const Home = () => {
               <RevenueDiagram></RevenueDiagram>
               <TrasuresDiagram></TrasuresDiagram>
               <RatingDiagram></RatingDiagram>
+              <TransactionsDiagram></TransactionsDiagram>
             </div>
         </div>
       </div>
