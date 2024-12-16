@@ -1,60 +1,136 @@
+/* Centraliza tudo no centro vertical e horizontal */
 .container {
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- height: 100vh;
- background-color: #f5f5f5;
- }
- 
- .header {
- text-align: center;
- margin-bottom: 2rem;
- }
- 
- .main {
- display: flex;
- flex-direction: column;
- align-items: center;
- width: 80%;
- max-width: 800px;
- }
- 
- .goalCards {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- grid-gap: 2rem;
- margin-bottom: 2rem;
- }
- 
- .goalCard {
- background-color: white;
- border-radius: 8px;
- box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
- padding: 1.5rem;
- }
- 
- .inputContainer {
- display: flex;
- align-items: center;
- width: 100%;
- }
- 
- .input {
- flex-grow: 1;
- padding: 0.75rem 1rem;
- border: 1px solid #ccc;
- border-radius: 4px;
- font-size: 1rem;
- margin-right: 1rem;
- }
- 
- .submitButton {
- background-color: #6200ee;
- color: white;
- border: none;
- border-radius: 4px;
- padding: 0.75rem 1.5rem;
- font-size: 1rem;
- cursor: pointer;
- }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9fc;
+    width: 100vw;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 900px;
+  }
+  
+  /* Título */
+  .title {
+    font-size: 2rem;
+    color: var(--purple);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Cartões */
+  .goalCards {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    background-color: #f7f7f7;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    height: 150px;
+    flex: 1;
+    margin: 0 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Área de Input */
+  .inputArea {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+  }
+  
+  .input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background-color: var(--pureWhite);
+    color: #333;
+  }
+  
+  /* Toggle Pro */
+  .toggle {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  
+  .toggle span {
+    margin-right: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .toggle input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+  .slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50px;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  
+  .toggle input:checked + .slider {
+    background-color: var(--purple);
+  }
+  
+  .toggle .slider::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    transition: 0.4s;
+  }
+  
+  .toggle input:checked + .slider::before {
+    transform: translate(20px, -50%);
+  }
+  
+  /* Botão de envio */
+  .submitButton {
+    background-color: var(--purple);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .submitButton:hover {
+    background-color: #4a00d1;
+  }
+  
