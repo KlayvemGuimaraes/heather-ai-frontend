@@ -10,6 +10,7 @@ import Wallet from "../../assets/iconsSideBar/Wallet.svg"
 import Profile from "../../assets/iconsSideBar/Profile.svg"
 import infoSquare from "../../assets/iconsSideBar/infoSquare.svg"
 
+
 const Sidebar = () => {
   return (
     <div className={styles.container}>
@@ -23,6 +24,12 @@ const Sidebar = () => {
             <a href="/home">
               <img src={Chart} className={styles.icon} />
               Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="/Chat">
+              <img src={Chat} className={styles.icon} />
+              Chat
             </a>
           </li>
           <li>

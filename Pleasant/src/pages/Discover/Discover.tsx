@@ -1,14 +1,59 @@
 import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Discover.module.css';
 import Sidebar from '../../components/SideBar/SideBar';
 import TopBar from '../../components/TopBar/TopBar';
+import Bank from "../../assets/iconsDiscover/Bank.svg";
+import Crypto from "../../assets/iconsDiscover/Crypto.svg";
+import Trophy from "../../assets/iconsDiscover/Trophy.svg";
+import Dollar from "../../assets/iconsDiscover/Dollar.svg";
+import Star from "../../assets/iconsDiscover/Star.svg";
+
+// Componente funcional para manipular navegação
+const NavigationLinks = ({ navigate }) => {
+  return (
+    <ul className={styles.navList}>
+      <li><button onClick={() => navigate('/for-you')} className={styles.navButton}>For You</button></li>
+      <li><button onClick={() => navigate('/investments')} className={styles.navButton}>Investments</button></li>
+      <li><button onClick={() => navigate('/cryptocurrency')} className={styles.navButton}>Cryptocurrency</button></li>
+      <li><button onClick={() => navigate('/finance')} className={styles.navButton}>Finance</button></li>
+      <li><button onClick={() => navigate('/your-goals')} className={styles.navButton}>Your Goals</button></li>
+    </ul>
+  );
+};
+
+const PreferenceButtons = () => {
+  const navigate = useNavigate();
+  return (
+    <div className={styles.preferenceButtons}>
+      <button className={styles.containerButton} onClick={() => navigate('/investments')}>
+        <img src={Bank} className={styles.icon} alt="Investments" />
+        Investments
+      </button>
+      <button onClick={() => navigate('/cryptocurrency')}>
+        <img src={Crypto} className={styles.icon} alt="Crypto" />
+        Crypto
+      </button>
+      <button onClick={() => navigate('/your-goals')}>
+        <img src={Trophy} className={styles.icon} alt="Your Goals" />
+        Your Goals
+      </button>
+      <button onClick={() => navigate('/finance')}>
+        <img src={Dollar} className={styles.icon} alt="Finance" />
+        Finance
+      </button>
+      <button onClick={() => navigate('/defi-news')}>
+        <img src={Star} className={styles.icon} alt="DeFi News" />
+        DeFi News
+      </button>
+    </div>
+  );
+};
 
 class Discover extends Component {
   render() {
     return (
-      /* Div geral que cobre todo o componente da página Discover*/
       <div className={styles.wrapper}>
-        {/* Div que corrige o espaço da sidebar */}
         <div className={styles.sidebar}>
           <Sidebar />
         </div>
@@ -18,18 +63,11 @@ class Discover extends Component {
           <header className={styles.header}>
             <h1 className={styles.title}>Discover</h1>
             <nav>
-              <ul className={styles.navList}>
-                <li><a href="#" className="active">For You</a></li>
-                <li><a href="#">Investments</a></li>
-                <li><a href="#">Cryptocurrency</a></li>
-                <li><a href="#">Finance</a></li>
-                <li><a href="#">Your Goals</a></li>
-              </ul>
+              <NavigationWrapper />
             </nav>
           </header>
 
           <div className={styles.mainGrid}>
-            {/* Main Section */}
             <section>
               <div className={styles.heroSection}>
                 <img src="../src/assets/imagesDiscover/imageBitcoin.svg" alt="Special Bitcoin $100k" />
@@ -41,7 +79,6 @@ class Discover extends Component {
                 </div>
               </div>
 
-              {/* Card Grid */}
               <div className={styles.cardGrid}>
                 <div className={styles.card}>
                   <img src="../src/assets/imagesDiscover/ImageCloud.svg" alt="Market Cap" />
@@ -61,18 +98,11 @@ class Discover extends Component {
               </div>
             </section>
 
-            {/* Preferences Section */}
             <aside className={styles.preferences}>
               <h3>Make your own way</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <div className={styles.preferenceButtons}>
-                <button>Investments</button>
-                <button>Crypto</button>
-                <button>Your Goals</button>
-                <button>Finance</button>
-                <button>DeFi News</button>
-              </div>
-              <hr/>
+              <PreferenceButtons />
+              <hr className={styles.line} />
               <div className={styles.preferencesBtn}>
                 <button className={styles.saveButton}>Save your preferences</button>
               </div>
@@ -83,5 +113,11 @@ class Discover extends Component {
     );
   }
 }
+
+// Envolver a navegação em um componente funcional
+const NavigationWrapper = () => {
+  const navigate = useNavigate();
+  return <NavigationLinks navigate={navigate} />;
+};
 
 export default Discover;
