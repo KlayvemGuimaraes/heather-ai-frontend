@@ -13,13 +13,17 @@ function Transacao() {
 
   return (
     <>
-      <Sidebar/>
-      <Topbar/>
-      <div className={styles.container}>
-        <h1 className={styles.title}>Bem-vindo!</h1>
-        <p className={styles.text}>Você está logado com o endereço da carteira: {walletAddress}</p>
-          <Transaction walletAddress={walletAddress} /> {/* Transacao*/}
+    <div className={styles.wrapper}>
+      <div className={styles.sidebar}>
+        <Sidebar/>
       </div>
+      <Topbar/>
+        <div className={styles.container}>
+          <h1 className={styles.title}>Bem-vindo!</h1>
+          <p className={styles.text}>Você está logado com o endereço da carteira: {walletAddress}</p>
+            <Transaction walletAddress={walletAddress} /> {/* Transacao*/}
+        </div>
+    </div>
     </>
   );
 }

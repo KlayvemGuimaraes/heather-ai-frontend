@@ -92,6 +92,10 @@ body {
   color: #F2451C;
 }
 
+.sidebar{
+  width: 250px;
+}
+
 button:focus,
 input:focus {
     outline: none;
