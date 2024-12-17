@@ -84,6 +84,10 @@ body {
   color: #666666;
 }
 
+.iconHeather{
+  width: 15%;
+}
+
 button:focus,
 input:focus {
     outline: none;
@@ -153,3 +157,4 @@ html[data-theme="dark"] {
   --pure-black: #000000;
   --search-bar: #2E2E2E;
 }
+

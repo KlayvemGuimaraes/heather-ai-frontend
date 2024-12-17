@@ -4,6 +4,7 @@ import ConnectWallet from '../components/ConnectWallet';
 import Login from '../components/Login';
 import Signup from '../components/Signup';
 import styles from '../App.module.css';
+import LogoIconHeatherAi from "../assets/logo/logoIconHeatherAIpurple.svg"
 
 function Registro() {
   const [walletAddress, setWalletAddress] = useState(Cookies.get('walletAddress') || '');
@@ -12,7 +13,7 @@ function Registro() {
   return (
     <div className={styles.wrapper}>
     <div className={styles.container}>
-      <img src="../../src/assets/logo/LogoIconHeatherAI.svg" alt="Logo HeatherAI" />
+      <img className={styles.iconHeather} src={LogoIconHeatherAi} alt="Logo HeatherAI" />
       <h1 className={styles.title}>{isRegistering ? 'Cadastro' : 'Bem-vindo de volta!'}</h1>
 
       {!walletAddress && <ConnectWallet setWalletAddress={setWalletAddress} />}
