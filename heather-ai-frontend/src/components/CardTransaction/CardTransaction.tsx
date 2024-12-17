@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import sdk from '@crossmarkio/sdk';
-import styles from '../App.module.css';
+import styles from '../../App.module.css';
+import stylesCard from './CardTransaction.module.css';
 
-function transacao({ walletAddress }: { walletAddress: string }) {
+function CardTransaction({ walletAddress }: { walletAddress: string }) {
   const [destinationAddress, setDestinationAddress] = useState('');
   const [amount, setAmount] = useState('');
 
@@ -39,14 +40,14 @@ function transacao({ walletAddress }: { walletAddress: string }) {
         placeholder="Endereço de destino"
         value={destinationAddress}
         onChange={(e) => setDestinationAddress(e.target.value)}
-        className={styles.input}
+        className={stylesCard.input}
       />
       <input
         type="number"
         placeholder="Quantidade (em tokens)"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
-        className={styles.input}
+        className={stylesCard.input}
       />
       <button onClick={transfer} className={styles.btn}>
         Enviar
@@ -55,4 +56,4 @@ function transacao({ walletAddress }: { walletAddress: string }) {
   );
 }
 
-export default transacao;
+export default CardTransaction;

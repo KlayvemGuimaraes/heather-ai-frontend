@@ -16,7 +16,7 @@ function Login({
   const handleLogin = () => {
     const storedPassword = Cookies.get('password');
     if (storedPassword === password) {
-      navigate('/transacao');
+      navigate('/home');
     } else {
       alert('Senha incorreta, tente novamente!');
     }

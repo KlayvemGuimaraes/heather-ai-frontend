@@ -47,7 +47,7 @@ const Sidebar = () => {
           </li>
 
           <li>
-            <a href="#">
+            <a href="/transactions">
               <img src={Document} className={styles.icon} />
               Transactions
             </a>
