@@ -1,5 +1,5 @@
 {
-  "name": "pleasant",
+  "name": "heatherai",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,8 +13,8 @@
   "dependencies": {
     "@crossmarkio/sdk": "^0.4.0",
     "axios": "^1.7.9",
+    "heatherai": "file:",
     "js-cookie": "^3.0.5",
-    "pleasant": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",

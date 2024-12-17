@@ -9,13 +9,16 @@ import Setting from "../../assets/iconsSideBar/Setting.svg"
 import Wallet from "../../assets/iconsSideBar/Wallet.svg"
 import Profile from "../../assets/iconsSideBar/Profile.svg"
 import infoSquare from "../../assets/iconsSideBar/infoSquare.svg"
-
+import { Link } from 'react-router-dom';
+import LogoHeatherAI from "../../assets/logo/LogoHeatherAI.svg"
 
 const Sidebar = () => {
   return (
-    <div className={styles.container}>
+      <div className={styles.container}>
       <div className={styles.header}>
-        <img src="../../src/assets/logo/LogoPleasant.svg" alt="Logo Pleasant" />
+        <Link to="/home">
+          <img src={LogoHeatherAI} alt="Logo HeatherAI" />
+        </Link>
       </div>
       <div className={styles.content}>
         <ul>

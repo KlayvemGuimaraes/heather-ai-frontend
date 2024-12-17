@@ -1,6 +1,6 @@
 # npm install vite
 # npm install @crossmarkio/sdk
-# cd pleasant -> npm run dev
+# cd heather-ai-frontend -> npm run dev
 
 # TAREFAS
 # tem que trocar as ancoras por navigates na sidebar

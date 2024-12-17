@@ -12,7 +12,7 @@ function Registro() {
   return (
     <div className={styles.wrapper}>
     <div className={styles.container}>
-      <img src="../../src/assets/VectorPleasantPurple.svg" alt="Logo Pleasant" />
+      <img src="../../src/assets/logo/LogoIconHeatherAI.svg" alt="Logo HeatherAI" />
       <h1 className={styles.title}>{isRegistering ? 'Cadastro' : 'Bem-vindo de volta!'}</h1>
 
       {!walletAddress && <ConnectWallet setWalletAddress={setWalletAddress} />}
