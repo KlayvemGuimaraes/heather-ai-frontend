@@ -88,6 +88,10 @@ body {
   width: 15%;
 }
 
+.errorText{
+  color: #F2451C;
+}
+
 button:focus,
 input:focus {
     outline: none;

@@ -16,6 +16,8 @@ function Login({
   const handleLogin = () => {
     const storedPassword = Cookies.get('password');
     if (storedPassword === password) {
+      // Salvando o nome do usuário no cookie
+      Cookies.set('userName', 'Yasmine', { expires: 7 }); 
       navigate('/home');
     } else {
       alert('Senha incorreta, tente novamente!');
