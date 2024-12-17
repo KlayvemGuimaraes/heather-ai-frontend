@@ -101,6 +101,7 @@ input:focus {
   --button-background: #F1F1F1;
   --button-text: #840F74;
   
+  --headline-main: #840F74;
   --headline1: #000000;
   --headline2: #1F384C;
   --text: #2F2F2F;
@@ -132,6 +133,7 @@ html[data-theme="dark"] {
   --button-background: #780D694D;
   --button-text: #DEDEDE;
 
+  --headline-main: #F1F1F1;
   --headline1: #DEDEDE;
   --headline2: #DEDEDE;
   --text: #DEDEDE;

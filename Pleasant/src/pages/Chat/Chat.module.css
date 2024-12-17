@@ -1,25 +1,43 @@
-/* Centraliza tudo no centro vertical e horizontal */
-.container {
+.wrapper{
   display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+.sidebar{
+  width: 250px;
+}
+
+/* Container */
+.container {
+  background-color: var(--background);
+  font-family: 'Poppins', sans-serif;
+  flex: 1; /* Ocupa o espaço restante */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 60px;
+  width: 100%;
   height: 100vh;
-  background-color: #f9f9fc;
-  width: 100vw;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  max-width: 900px;
+  width: 80%;
 }
 
 /* Título */
 .title {
   font-size: 2rem;
-  color: var(--purple);
+  color: var(--headline-main);
   font-weight: 500;
   text-align: center;
   margin-bottom: 2rem;
@@ -34,7 +52,7 @@
 }
 
 .card {
-  background-color: #f7f7f7;
+  background-color: var(--lighter-background);
   border: 2px solid var(--lightPurple);
   border-radius: 8px;
   height: 150px;
@@ -49,7 +67,7 @@
   align-items: center;
   width: 100%;
   max-width: 800px;
-  background-color: white;
+  background-color: var(--lighter-background);
   border: 2px solid var(--lightPurple);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -62,8 +80,8 @@
   border: none;
   outline: none;
   font-size: 1rem;
-  background-color: var(--pureWhite);
-  color: #333;
+  background-color: var(--lighter-background);
+  color: var(--text);
 }
 
 /* Toggle Pro */
@@ -88,7 +106,7 @@
   position: relative;
   width: 40px;
   height: 20px;
-  background-color: #ccc;
+  background-color: var(--background);
   border-radius: 50px;
   transition: 0.4s;
   cursor: pointer;
@@ -103,7 +121,7 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  background-color: white;
+  background-color: var(--lighter-background);
   border-radius: 50%;
   top: 50%;
   left: 4px;
@@ -118,7 +136,7 @@
 /* Botão de envio */
 .submitButton {
   background-color: var(--purple);
-  color: white;
+  color: var(--button-text);
   border: none;
   border-radius: 50%;
   width: 40px;
@@ -131,5 +149,5 @@
 }
 
 .submitButton:hover {
-  background-color: #4a00d1;
+  background-color: var(--button-background);
 }
