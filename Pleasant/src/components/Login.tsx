@@ -18,7 +18,7 @@ function Login({
     if (storedPassword === password) {
       navigate('/transacao');
     } else {
-      alert('Senha incorreta!');
+      alert('Senha incorreta, tente novamente!');
     }
   };
 
