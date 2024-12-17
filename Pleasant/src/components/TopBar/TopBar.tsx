@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './TopBar.module.css';
 
 // IMAGENS
@@ -12,6 +12,19 @@ import user_pfp  from '../../assets/iconsTopBar/yasmine_pfp.png'
 const Topbar = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem('theme') === 'dark'
+  );
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark-mode', isDarkMode);
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light');
+  };
 
   return (
     <div className={styles.container}>
@@ -33,6 +46,10 @@ const Topbar = () => {
 
         {/* OUTROS ACESSOS */}
         <div className={styles.userInfo}>
+        <button onClick={toggleDarkMode}>
+            {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+          </button>
+
           <div className={styles.user}>
             <img src={user_pfp} alt="User profile picture" />
             <label>@yasmine</label>

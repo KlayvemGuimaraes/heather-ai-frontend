@@ -6,9 +6,13 @@ import TopBar from '../../components/TopBar/TopBar';
 
 const Chat = () => {
   return (
-    <>
-      <Sidebar />
+    <div className={styles.wrapper}>
+      <div className={styles.sidebar}>
+        <Sidebar />
+      </div>
+
       <TopBar />
+      
       <div className={styles.container}>
         <div className={styles.content}>
           {/* Título */}
@@ -31,7 +35,7 @@ const Chat = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

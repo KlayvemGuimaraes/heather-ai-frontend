@@ -15,29 +15,23 @@
 }
 
 .infoLabels h3{
-    color: var(--pure-black);
+    color: var(--headline1);
     
     font-size: 14px;
     margin: 10px 0;
 }
 .infoLabels h4{
-    color: var(--pure-black);
+    color: var(--headline1);
     
     font-size: 20px;
     margin: 0 0 10px 0;
 }
 
 .reportButton{
-    background-color: var(--off-white);
-    color: var(--purple);
+    background-color: var(--fun-button-background);
+    color: var(--fun-button-text);
     font-size: 12px;
     padding: 6px 14px;
     height: fit-content;
     width: fit-content;
-}
-
-.fig{
-    width: 100%;
-    height: 150px;
-    background-color: var(--lightPurple);
 }
