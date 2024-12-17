@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './pages/Header';
-import Transaction from './pages/Transaction';
+import Transaction from './pages/Transaction/Transaction';
 import Home from './pages/Home/Home';
 import Discover from './pages/Discover/Discover';
 import Chat from "./pages/Chat/Chat"
