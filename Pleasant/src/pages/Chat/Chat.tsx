@@ -28,16 +28,6 @@ const Chat = () => {
               placeholder="Ask about your goal"
               className={styles.input}
             />
-            <div className={styles.toggle}>
-              <label>
-                <span>Pro</span>
-                <input type="checkbox" />
-                <span className={styles.slider}></span>
-              </label>
-            </div>
-            <button className={styles.submitButton}>
-              <FiArrowRight /> {/* Ícone de seta */}
-            </button>
           </div>
         </div>
       </div>
