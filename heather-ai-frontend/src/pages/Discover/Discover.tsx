@@ -55,10 +55,10 @@ class Discover extends Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.sidebar}>
-          <Sidebar />
+          <Sidebar/>
         </div>
 
-        <TopBar />
+        <TopBar/>
         <div className={styles.container}>
           <header className={styles.header}>
             <h1 className={styles.title}>Discover</h1>

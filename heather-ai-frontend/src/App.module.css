@@ -116,11 +116,11 @@ input:focus {
   --lightText: #737B8B;
   
   --purple: #840F74;
+  --lightPurple: #BB35A9;
   --dark-purple: #590059;
   --green: #149D52;
   --off-white: #F1F1F1;
 
-  --lightPurple: #BB35A9;
   --darkish-purple: #780D69;
 
   --white: #DEDEDE;
@@ -148,11 +148,11 @@ html[data-theme="dark"] {
 
   --purple: #780D69;
   --dark-purple: #590059;
+  --lightPurple: #6B227E;
   --green: #149D52;
   --off-white: #F1F1F1;
 
   --darkish-purple: #3C1146;
-  --lightPurple: #6B227E;
 
   --pure-white: #121212;
   --white: #1F1F1F;
