@@ -4,6 +4,7 @@ import Transacao from './pages/Transacao';
 import Home from './pages/Home/Home';
 import Discover from './pages/Discover/Discover';
 import Chat from "./pages/Chat/Chat"
+import './App.module.css';
 
 function App() {
   return (
