@@ -2,16 +2,14 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: url("assets/background.svg") no-repeat; 
   background-color: white;
-  background-size: cover;
   /* height: 100vh;
   width: 100vw; */
   margin: 0;
 }
 
 .wrapper{
-  width: 100vw;
+  width: 10vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -20,12 +18,67 @@ body {
 
 .container {
   background: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 8px;
   padding: 2rem;
+}
+
+.titleBox {
+  width: 30vw;
+  text-align: center;
+}
+
+.switchActionBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25vw;
+  height: 7vh;
+  margin-top: 1rem;
+  border-radius: 15px;
+  background: #f0f0f2;
+}
+
+.connectedWalletBox {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  width: 25vw;
+  height: 7vh;
+  margin-top: 1rem;
+  border: 1px solid #adadae;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.switchActionBtn {
+  width: 12vw;
+  height: 6vh;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  font-size: 1rem;
+  text-align: center;
+  background: #f0f0f2;
+  color: #adadae;
+}
+
+.switchActionBtn:hover {
+  color: #000;
+  border: #f0f0f2;;
+}
+
+.switchActionBtnActive {
+  width: 12vw;
+  height: 6vh;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 15px;
+  background: #fff;
+  color: #000;
 }
 
 .containerBox{
@@ -37,14 +90,13 @@ body {
 .title {
   font-size: 1.5rem;
   text-align: center;
-  color: #780D69;
-  margin-bottom: 1rem;
+  color: #000;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
-  color: #780D69;
+  color: #c9c8c9;
   margin-bottom: 1rem;
 }
 
@@ -62,7 +114,7 @@ body {
 }
 
 .btn {
-  width: 100%;
+  width: 2.rem;
   padding: 0.8rem;
   margin: 0.5rem 0;
   border: none;
@@ -77,6 +129,56 @@ body {
 .btn:hover {
   background: #780D69;
   text-decoration: none;
+}
+
+.btnConnectWallet {
+  width: 25vw;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: solid 1px #adadae;
+  border-radius: 15px;
+  background:#f0f0f2;
+  color: #adadae;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btnConnectWallet:hover {
+  background:rgb(227, 227, 227);
+  color: #000;
+  border: solid 1px #adadae;
+  text-decoration: none;
+}
+
+.btnContinue {
+  width: 25vw;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 15px;
+  background: #780D69;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btnContinue:hover {
+  background: #780D69;
+  text-decoration: none;
+}
+
+.inputPassword {
+  width: 23vw;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem;
+  color: #780D69;
+  border: 1px solid #adadae;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #FAFAFA;
 }
 
 .text {
