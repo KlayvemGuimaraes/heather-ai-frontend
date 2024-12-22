@@ -68,7 +68,8 @@ function Signup() {
 
       const data = {
         wallet_address: wallet.aderess,
-        password
+        password,
+        remember: false,
       }
 
       auth.login(data);

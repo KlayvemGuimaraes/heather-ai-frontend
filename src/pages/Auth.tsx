@@ -4,8 +4,13 @@ import Signup from '../components/Signup';
 import styles from '../App.module.css';
 import LogoIconHeatherAi from "../assets/logo/logoIconHeatherAIpurple.svg"
 
+import { useAuth } from '../providers/AuthProvider';
+
 function Auth() {
+  const auth = useAuth();
   const [isRegistering, setIsRegistering] = useState(false);
+
+  if (auth.user !== undefined) window.location.href = '/home';
 
   return (
     <div className={styles.wrapper}>

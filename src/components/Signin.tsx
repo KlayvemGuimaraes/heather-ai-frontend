@@ -12,7 +12,7 @@ import styles from '../App.module.css';
 
 function Signin() {
   const auth = useAuth();
-
+  const connectedWalet = localStorage.getItem('connectedWallet') ? JSON.parse(localStorage.getItem('connectedWallet') || '{}') : null;
   const [wallet, setWallet] = useState<IWallet>({
     nickname: '',
     aderess: '',
@@ -20,6 +20,15 @@ function Signin() {
   });
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [remember, setRemember] = useState<boolean>(true);
+
+  if (connectedWalet) {
+    wallet.aderess = connectedWalet;
+  }
+
+  const handleRemember = () => {
+    setRemember(!remember);
+  }
 
   const handleLogin = async () => {
     if (!wallet.aderess) {
@@ -29,12 +38,13 @@ function Signin() {
 
     const data = {
       wallet_address: wallet.aderess,
-      password
+      password,
+      remember,
     }
 
     const response = await auth.login(data);
 
-    if (!response) {
+    if (response === 'error') {
       setErrorMessage('Carteira ou senha invalidas.');
       return;
     }
@@ -71,6 +81,17 @@ function Signin() {
         className={styles.inputPassword}
         style={{ marginTop: '1em', marginBottom: '0.5rem' }}
       />
+      <label className={styles.checkboxStyleb}>
+        <div>
+          <input
+            type="checkbox"
+            checked={remember}
+            onChange={handleRemember}
+          />
+          <div className={styles.checkbox__checkmark}></div>
+        </div>
+        <div className={styles.checkbox__body}>Lembrar carteira selecionada.</div>
+      </label>
       <button onClick={handleLogin} className={styles.btnContinue}>
         Entrar
       </button>
