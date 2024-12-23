@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
 import styles from './TopBar.module.css';
+
+import { useAuth } from '../../providers/AuthProvider';
 
 // IMAGENS
 import magnifying_glass from '../../assets/iconsTopBar/magnifying_glass.svg';
 import info_square from '../../assets/iconsTopBar/info_square.svg';
 import chevron_down from '../../assets/iconsTopBar/chevron_down.svg';
 import notifications from '../../assets/iconsTopBar/notifications.svg';
-import user_pfp from '../../assets/iconsTopBar/yasmine_pfp.png';
 
 const Topbar = () => {
+  const auth = useAuth();
+
   const [searchQuery, setSearchQuery] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem('theme') === 'dark'
@@ -46,9 +49,8 @@ const Topbar = () => {
         <div className={styles.userInfo}>
           {/* BOTÃO DE DARK/LIGHT MODE */}
           <div
-            className={`${styles.toggleButton} ${
-              isDarkMode ? styles.dark : styles.light
-            }`}
+            className={`${styles.toggleButton} ${isDarkMode ? styles.dark : styles.light
+              }`}
             onClick={toggleDarkMode}
           >
             <div className={styles.circle}>
@@ -61,8 +63,7 @@ const Topbar = () => {
           </div>
 
           <div className={styles.user}>
-            <img src={user_pfp} alt="User profile picture" />
-            <label>@yasmine</label>
+            <label>{auth.userName}</label>
           </div>
 
           <button className={styles.deposit}>
