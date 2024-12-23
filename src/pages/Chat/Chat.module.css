@@ -1,3 +1,14 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: calc(100vh - 60px); /* Ajusta a altura para deixar espaço para a barra de navegação e topo */
+  overflow-y: auto; /* Permite rolagem caso o conteúdo exceda a altura */
+  padding: 20px;
+}
+
 .wrapper{
   display: flex;
   width: 100vw;
@@ -14,17 +25,15 @@
 
 /* Container */
 .container {
-  background-color: var(--background);
-  font-family: 'Poppins', sans-serif;
-  flex: 1; /* Ocupa o espaço restante */
-  padding: 20px;
+  width: 80%; /* Ajuste a largura conforme necessário */
+  max-width: 1200px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  background: var(--background);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 60px;
-  width: 100%;
-  height: 100vh;
+  border-radius: 8px;
+  padding: 2rem;
 }
 
 .content {
@@ -34,6 +43,14 @@
   width: 80%;
 }
 
+
+.logo{
+  max-width: 200px;
+  margin-bottom: 20px;
+  
+}
+
+
 /* Título */
 .title {
   font-size: 2rem;
@@ -42,6 +59,15 @@
   text-align: center;
   margin-bottom: 2rem;
 }
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text); /* Certifique-se de que a cor esteja definida */
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+
 
 /* Cartões */
 .goalCards {
@@ -135,19 +161,70 @@
 
 /* Botão de envio */
 .submitButton {
-  background-color: var(--purple);
-  color: var(--button-text);
+  background-color: #2980b9;
+  color: #ffffff;
+  padding: 10px 20px;
   border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 0 8px 8px 0;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .submitButton:hover {
-  background-color: var(--button-background);
+  background-color: #1f618d;
 }
+
+.chatArea {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.userMessage {
+  align-self: flex-end; /* Alinha à esquerda */
+  background-color: purple;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  max-width: 60%; /* Limita a largura das mensagens */
+}
+
+.aiMessage {
+  align-self: flex-start;
+  background-color: purple;
+  padding: 15px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+}
+
+.aiMessage p {
+  margin: 0 0 15px 0;
+}
+
+.aiMessage ol {
+  margin: 10px 0 15px 20px;
+  padding: 0;
+  color: #ffffff;
+}
+
+.aiMessage ol li {
+  margin-bottom: 10px;
+}
+
+.aiMessage ol li::marker {
+  color: #ecf0f1;
+}
+
+.aiMessage strong {
+  font-weight: bold;
+}
+

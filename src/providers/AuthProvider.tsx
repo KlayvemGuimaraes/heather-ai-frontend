@@ -11,6 +11,8 @@ type LoginType = {
 
 interface ProviderProps {
   user: string | null,
+  userId: string | null,
+  userName: string | null;
   token: string,
   login(data: LoginType): Promise<string>,
   logout(): void,
@@ -19,6 +21,8 @@ interface ProviderProps {
 
 const AuthContext = createContext<ProviderProps>({
   user: null,
+  userId: null,
+  userName: null,
   token: '',
   login: async () => { return '' },
   logout: () => { },
@@ -28,6 +32,8 @@ const AuthContext = createContext<ProviderProps>({
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const storedInfo = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user') || '{}') : null;
   const [user, setUser] = useState<string | null>(storedInfo?.wallet_address);
+  const [userId, setUserId] = useState<string | null>(null);
+  const [userName, setUserName] = useState<string | null>(null);
   const [token, setToken] = useState(storedInfo?.token || '');
   const navigate = useNavigate();
 
@@ -39,8 +45,15 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         password: data.password
       });
       const token = response.data.token
-      const obj = { ...response.data.user, token }
+      const obj = {
+        ...{
+          nickname: response.data.user.nickname,
+          wallet_address: response.data.user.wallet_address
+        }, token
+      }
       setUser(data.wallet_address)
+      setUserId(response.data.user.id);
+      setUserName(response.data.user.nickname);
       setToken(token);
       localStorage.setItem('user', JSON.stringify(obj));
       if (data.remember) localStorage.setItem('connectedWallet', JSON.stringify(data.wallet_address));
@@ -63,7 +76,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ user, token, login, logout, navigateTo }
+    <AuthContext.Provider value={{ user, userId, userName, token, login, logout, navigateTo }
     }>
       {children}
     </AuthContext.Provider>
